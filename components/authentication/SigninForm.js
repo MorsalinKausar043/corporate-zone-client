@@ -4,8 +4,7 @@ import job from "../../images/job_hunt.svg";
 import Image from "next/image";
 import Link from "next/link";
 
-const SigninForm = () =>
-{
+const SigninForm = () => {
   const { logInWithEmailAndPassword } = useFirebase();
 
   const {
@@ -13,10 +12,9 @@ const SigninForm = () =>
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) =>
-  {
+  const onSubmit = (data) => {
     logInWithEmailAndPassword(data.email, data.password);
-    console.log(data.email, data.password);
+    data.email, data.password;
 
     //  router.push("/");
   };
@@ -90,7 +88,9 @@ const SigninForm = () =>
                     <p className="text-sm">
                       Don't have an account yet?{" "}
                       <Link href="/signup">
-                        <a className="text-blue-600 hover:underline">Sign up.</a>
+                        <a className="text-blue-600 hover:underline">
+                          Sign up.
+                        </a>
                       </Link>
                     </p>
                   </div>

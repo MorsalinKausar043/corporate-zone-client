@@ -9,7 +9,7 @@ import SkillSetsInput from "./inputs/SkillSetsInput";
 const CandidateUpdateForm = () => {
   const currentUser = useSelector((state) => state.user.currentUser);
   const loggedInUser = useSelector((state) => state.user.loggedInUser);
-  console.log(loggedInUser);
+  loggedInUser;
 
   const [photoURL, setPhotoURL] = useState(loggedInUser?.photoURL);
   const [selectedSkills, setSelectedSkills] = useState([]);
@@ -31,7 +31,7 @@ const CandidateUpdateForm = () => {
       }
     )
       .then((response) => response.json())
-      .then((data) => console.log(data));
+      .then((data) => data);
   };
   return (
     <div>

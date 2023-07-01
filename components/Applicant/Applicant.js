@@ -21,7 +21,7 @@ const Applicant = () => {
     setMatchJobs(matchFound);
   }, [postedJobs, currentUser]);
 
-  console.log(matchJobs);
+  matchJobs;
 
   return (
     <div className="w-60 items-center justify-center flex-col ml-96">

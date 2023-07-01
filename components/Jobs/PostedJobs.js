@@ -27,7 +27,7 @@ const PostedJobs = (props) => {
       job.jobTitle.toLowerCase().includes(searchText.toLowerCase())
     );
     setDisplay(matched);
-    console.log(matched);
+    matched;
   };
 
   const router = useRouter();
@@ -52,7 +52,7 @@ const PostedJobs = (props) => {
       .then((data) => {
         setJobs(data.data);
         setDisplay(data.data);
-        console.log(data.data);
+        data.data;
       });
   }, []);
 

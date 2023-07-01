@@ -1,11 +1,12 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 
-
 const AddAdmin = () => {
   const { register, handleSubmit, reset } = useForm();
-  const onSubmit = data => { console.log(data) }
-  
+  const onSubmit = (data) => {
+    data;
+  };
+
   return (
     <div className="bg-teal-50">
       <form

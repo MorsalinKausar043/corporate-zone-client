@@ -80,7 +80,7 @@ const SingleChat = ({ loggedInUser, selectedChat }) => {
           },
           config
         );
-        console.log(data);
+        data;
         socket.emit("newMessage", data);
         setMessages([...messages, data]);
       } catch (err) {

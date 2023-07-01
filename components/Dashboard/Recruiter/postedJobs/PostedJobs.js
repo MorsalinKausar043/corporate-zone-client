@@ -24,7 +24,7 @@ const PostedJobs = ({ jobs }) => {
     fetchData();
   }, []);
 
-  console.log(postJobs);
+  postJobs;
   // handling error if no jobs found
   if (!postJobs.length) {
     return (

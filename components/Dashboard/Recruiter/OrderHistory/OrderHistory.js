@@ -28,7 +28,7 @@ const OrderHistory = () => {
           }
         })
         .catch(function (error) {
-          console.log(error);
+          error;
         });
     }
   }, []);
@@ -78,7 +78,7 @@ const OrderHistory = () => {
           setReady(false);
         })
         .catch(function (error) {
-          console.log(error);
+          error;
         });
     }
   }, [ready]);
@@ -94,7 +94,7 @@ const OrderHistory = () => {
         }
       })
       .catch(function (error) {
-        console.log(error);
+        error;
       });
   }, [loggedInUser?.email]);
 

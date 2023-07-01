@@ -35,7 +35,7 @@ const useFirebase = () => {
   ) => {
     createUserWithEmailAndPassword(auth, email, password)
       .then((result) => {
-        console.log(result);
+        result;
         updateProfile(auth.currentUser, {
           displayName: username,
           photoURL: photoURL,
@@ -99,19 +99,19 @@ const useFirebase = () => {
       );
       const result = await res.json();
       if (result) {
-        console.log(result);
+        result;
         router.push("/dashboard/profile");
       } else {
-        console.log(error);
+        error;
       }
       // axios
       //   .post("https://corporate-zone-backend-main.vercel.app/users/register", data)
       //   .then(function (response) {
-      //     console.log(response);
+      //     (response);
       //     router.push("/dashboard/profile");
       //   })
       //   .catch(function (error) {
-      //     console.log(error);
+      //     (error);
       //   });
     } catch (err) {
       console.error(err);

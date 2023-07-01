@@ -84,7 +84,7 @@ const JobPost = () => {
         setPhotoURL(res.data.data.display_url);
       })
       .catch(function (error) {
-        console.log(error);
+        error;
       });
   };
 
@@ -146,7 +146,7 @@ const JobPost = () => {
           }
         })
         .catch(function (error) {
-          console.log(error);
+          error;
         });
     } else {
       Swal.fire(

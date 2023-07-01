@@ -23,7 +23,7 @@ const RecentJobs = (props) => {
       `https://corporate-zone-backend-main.vercel.app/jobs?jobType=${e.target.value}`
     );
     const data = await response.json();
-    console.log(data.data);
+    data.data;
     setJobs(data.data.reverse());
     setDisplay(data.data);
 
@@ -38,7 +38,7 @@ const RecentJobs = (props) => {
       .then((data) => {
         setJobs(data.data.reverse());
         setDisplay(data.data);
-        console.log(data.data);
+        data.data;
       });
   }, []);
 
@@ -48,7 +48,7 @@ const RecentJobs = (props) => {
       job.jobTitle.toLowerCase().includes(sarchText.toLowerCase())
     );
     setDisplay(matched);
-    console.log(matched);
+    matched;
   };
 
   return (

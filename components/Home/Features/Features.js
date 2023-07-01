@@ -24,7 +24,7 @@ const Features = (props) => {
             .filter((e) => e.jobTitle && e.jobDescription && e.companyLogo)
             .slice(0, 5)
         );
-        console.log(data.data);
+        data.data;
       });
   }, []);
 

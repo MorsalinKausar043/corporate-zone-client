@@ -14,7 +14,7 @@ const PhotoUpload = ({ register, setPhotoURL, photoURL }) => {
         setPhotoURL(response.data.data.display_url);
       })
       .catch((error) => {
-        console.log(error);
+        error;
       });
   };
   return (

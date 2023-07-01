@@ -9,26 +9,22 @@ import stripe from "../../../images/stripe.png";
 import { useRef } from "react";
 import Image from "next/image";
 
-
-const Footer = () =>
-{
-
+const Footer = () => {
   const form = useRef();
 
-  const sendEmail = (e) =>
-  {
+  const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm(
-      "service_xgz22ma",
-      "template_kmbg1t2",
-      form.current,
-      "iTYZHZvfqHjV6ixNT"
-    )
+    emailjs
+      .sendForm(
+        "service_xgz22ma",
+        "template_kmbg1t2",
+        form.current,
+        "iTYZHZvfqHjV6ixNT"
+      )
       .then(
-        (result) =>
-        {
-          console.log(result.text);
+        (result) => {
+          result.text;
           if (result.text) {
             return Swal.fire(
               "Thank You For Subscription!",
@@ -36,11 +32,10 @@ const Footer = () =>
               "success"
             );
           }
-          useRef.current('')
+          useRef.current("");
         },
-        (error) =>
-        {
-          console.log(error.text);
+        (error) => {
+          error.text;
         }
       );
   };
@@ -66,7 +61,12 @@ const Footer = () =>
             </span>
           </div>
           <div>
-            <form action="#" ref={form} onSubmit={sendEmail} className="flex justify-center items-center">
+            <form
+              action="#"
+              ref={form}
+              onSubmit={sendEmail}
+              className="flex justify-center items-center"
+            >
               <input
                 className="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-l-md py-2 pl-2 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm"
                 placeholder="Enter your mail..."
@@ -90,7 +90,9 @@ const Footer = () =>
                     alt="logo"
                   />
                   <span className=" text-xl font-extrabold">
-                    <span className="dark:text-white text-slate-700 whitespace-nowrap">CorporateZone</span>
+                    <span className="dark:text-white text-slate-700 whitespace-nowrap">
+                      CorporateZone
+                    </span>
                   </span>
                 </a>
               </Link>
@@ -125,7 +127,6 @@ const Footer = () =>
                   <a className="">Rules & Regulation</a>
                 </Link>
               </p>
-
             </div>
 
             <div className="text-base">
@@ -191,11 +192,7 @@ const Footer = () =>
         </div>
 
         <div className="text-center py-3">
-
-          <p
-            className=" font-semibold text-slate-700 dark:text-white"
-
-          >
+          <p className=" font-semibold text-slate-700 dark:text-white">
             &copy; 2022, Code Express. All Rights Reserved.
           </p>
         </div>

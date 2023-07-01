@@ -47,7 +47,7 @@ const Quiz = ({ technology, setState }) => {
       (selectedOptions[currentQuestion] = { answerByUser: answer }),
     ]);
     setSelectedOptions([...selectedOptions]);
-    console.log(selectedOptions);
+    selectedOptions;
   };
 
   const handleNext = () => {
@@ -84,10 +84,10 @@ const Quiz = ({ technology, setState }) => {
           }
         )
         .then(function (response) {
-          console.log(response);
+          response;
         })
         .catch(function (error) {
-          console.log(error);
+          error;
         });
     }
 

@@ -25,12 +25,12 @@ const SkillSetsInput = ({ register, setSelectedSkills, loggedInUser }) => {
 
   const onSelect = (selectedList, selectedItem) => {
     setSelectedSkills(selectedList);
-    // console.log(selectedLists);
+    // (selectedLists);
   };
 
   const onRemove = (selectedList, removedItem) => {
     setSelectedSkills(selectedList);
-    // console.log(selectedLists);
+    // (selectedLists);
   };
   return (
     <div>

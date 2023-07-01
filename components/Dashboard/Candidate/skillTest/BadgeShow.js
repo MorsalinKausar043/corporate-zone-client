@@ -18,7 +18,7 @@ const BadgeShow = () => {
         setResult(response?.data);
       })
       .catch(function (error) {
-        console.log(error);
+        error;
       });
   }, [loggedInUser?.email]);
 

@@ -45,14 +45,14 @@ const CandidateForm = () => {
     const imageData = new FormData();
     imageData.set("key", "fe834545cf9ccab761e32c03f567e890");
     imageData.append("image", e.target.files[0]);
-    // console.log(imageData);
+    // (imageData);
     axios
       .post("https://api.imgbb.com/1/upload", imageData)
       .then(function (response) {
         setPhotoURL(response.data.data.display_url);
       })
       .catch(function (error) {
-        console.log(error);
+        error;
       });
   };
   return (

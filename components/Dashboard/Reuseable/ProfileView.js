@@ -4,10 +4,9 @@ import Badge from "../Candidate/skillTest/Badge";
 import BadgeShow from "../Candidate/skillTest/BadgeShow";
 import Chart from "../Chart/Chart";
 
-const ProfileView = ({ role, loggedInUser }) =>
-{
+const ProfileView = ({ role, loggedInUser }) => {
   const router = useRouter();
-  console.log(loggedInUser);
+  loggedInUser;
   return (
     <div className="bg-white xl:px-5 md:px-2 px-2 py-1">
       {/* profile information */}
@@ -120,82 +119,84 @@ const ProfileView = ({ role, loggedInUser }) =>
           </div>
         </div>
         {/* candidate additional information */}
-        {loggedInUser && role === "candidate" && loggedInUser?.role === role && (
-          <>
-            <div className="flex flex-wrap md:flex-nowrap">
-              <div className=" py-5">
-                {/* skill Set */}
-                <div className="py-2">
-                  <p className="font-semibold text-slate-600 py-1">
-                    Skill set:{" "}
-                  </p>
-                  <p>
-                    {loggedInUser?.selectedSkills.map((skill) => (
-                      <span key={skill.id}>{skill.name}, </span>
-                    ))}{" "}
-                    and so on.
-                  </p>
-                </div>
+        {loggedInUser &&
+          role === "candidate" &&
+          loggedInUser?.role === role && (
+            <>
+              <div className="flex flex-wrap md:flex-nowrap">
+                <div className=" py-5">
+                  {/* skill Set */}
+                  <div className="py-2">
+                    <p className="font-semibold text-slate-600 py-1">
+                      Skill set:{" "}
+                    </p>
+                    <p>
+                      {loggedInUser?.selectedSkills.map((skill) => (
+                        <span key={skill.id}>{skill.name}, </span>
+                      ))}{" "}
+                      and so on.
+                    </p>
+                  </div>
 
-                {/* resume */}
-                <div className="">
-                  <p className="font-semibold text-sm text-slate-600 py-1">
-                    Resume (Google Drive):
-                  </p>
-                  <a
-                    className="text-blue-700 hover:underline"
-                    href={loggedInUser?.resumeLink}
-                  >
-                    {loggedInUser?.resumeLink}
-                  </a>
-                </div>
-                {/* portfolio */}
-                <div className="py-2">
-                  <p className="font-semibold text-sm text-slate-600 py-1">
-                    Portfolio Link:
-                  </p>
-                  <a
-                    className="text-blue-700 hover:underline"
-                    href={loggedInUser?.portfolio}
-                  >
-                    {loggedInUser?.portfolio}
-                  </a>
-                </div>
-                {/* portfolio */}
-                <div>
-                  <p className="font-semibold text-sm text-slate-600 py-1">
-                    Github Profile:
-                  </p>
-                  <a
-                    className="text-blue-700 hover:underline"
-                    href={loggedInUser?.githubProfile}
-                  >
-                    {loggedInUser?.githubProfile}
-                  </a>
-                </div>
+                  {/* resume */}
+                  <div className="">
+                    <p className="font-semibold text-sm text-slate-600 py-1">
+                      Resume (Google Drive):
+                    </p>
+                    <a
+                      className="text-blue-700 hover:underline"
+                      href={loggedInUser?.resumeLink}
+                    >
+                      {loggedInUser?.resumeLink}
+                    </a>
+                  </div>
+                  {/* portfolio */}
+                  <div className="py-2">
+                    <p className="font-semibold text-sm text-slate-600 py-1">
+                      Portfolio Link:
+                    </p>
+                    <a
+                      className="text-blue-700 hover:underline"
+                      href={loggedInUser?.portfolio}
+                    >
+                      {loggedInUser?.portfolio}
+                    </a>
+                  </div>
+                  {/* portfolio */}
+                  <div>
+                    <p className="font-semibold text-sm text-slate-600 py-1">
+                      Github Profile:
+                    </p>
+                    <a
+                      className="text-blue-700 hover:underline"
+                      href={loggedInUser?.githubProfile}
+                    >
+                      {loggedInUser?.githubProfile}
+                    </a>
+                  </div>
 
-                {/* linkedin */}
-                <div className="py-2">
-                  <p className="font-semibold text-sm text-slate-600 py-1">
-                    LinkedIn Profile:
-                  </p>
-                  <a
-                    className="text-blue-700 hover:underline"
-                    href={loggedInUser?.linkedInProfile}
-                  >
-                    {loggedInUser?.linkedInProfile}
-                  </a>
+                  {/* linkedin */}
+                  <div className="py-2">
+                    <p className="font-semibold text-sm text-slate-600 py-1">
+                      LinkedIn Profile:
+                    </p>
+                    <a
+                      className="text-blue-700 hover:underline"
+                      href={loggedInUser?.linkedInProfile}
+                    >
+                      {loggedInUser?.linkedInProfile}
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="bg-slate-100 md:w-7/12 w-full border rounded mt-5 p-3">
-              <h1 className="mb-5 text-zinc-600 text-2xl font-serif font-bold tracking-widest border-b-4 border-green-500 shadow-md rounded-2xl p-2">
-                Skill Test Badges
-              </h1>
-              <BadgeShow />
-            </div>
-          </>
-        )}
+              <div className="bg-slate-100 md:w-7/12 w-full border rounded mt-5 p-3">
+                <h1 className="mb-5 text-zinc-600 text-2xl font-serif font-bold tracking-widest border-b-4 border-green-500 shadow-md rounded-2xl p-2">
+                  Skill Test Badges
+                </h1>
+                <BadgeShow />
+              </div>
+            </>
+          )}
       </div>
     </div>
   );
